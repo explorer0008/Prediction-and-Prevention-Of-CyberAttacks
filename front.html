@@ -10,14 +10,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css" />
   <script src="app.js" defer></script>
-  <script>
-    // Redirect to login if not authenticated
-    document.addEventListener('DOMContentLoaded', function() {
-      var isAdmin = localStorage.getItem('isAdmin') === 'true';
-      if (!isAdmin) {
-        window.location.href = 'login.html';
-      }
-    });
+    <script>
+    // Undo: removed forced redirect to login so `front.html` stays publicly accessible.
+    // If you want to re-enable client-side redirect, restore the previous script here.
   </script>
   </head>
   <body>
@@ -26,7 +21,7 @@
         <h1 class="brand text-2xl font-bold text-blue-700 mb-2 md:mb-0">Cybersecurity Dataset Explorer</h1>
         <nav class="main-nav flex gap-2">
           <a href="front.html" class="border border-primary text-primary rounded px-3 py-1 bg-transparent">Home</a>
-          <a href="login.html" class="border border-primary text-primary rounded px-3 py-1 bg-transparent">Admin Login</a>
+          <a href="index.html" class="border border-primary text-primary rounded px-3 py-1 bg-transparent">Admin Login</a>
           <a href="dashboard.html" class="border border-primary text-primary rounded px-3 py-1 bg-transparent">Dashboard</a>
         </nav>
       </div>
