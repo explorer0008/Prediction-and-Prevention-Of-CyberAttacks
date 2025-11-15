@@ -2,7 +2,7 @@
 """
 Minimal HTTP server to serve the frontend files locally.
 Run from the Dataset directory: python server.py
-Then open http://localhost:8000/front.html in your browser.
+Then open http://localhost:8000/index.html in your browser.
 """
 
 import http.server
