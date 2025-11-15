@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1 class="brand">Cybersecurity Dataset Explorer</h1>
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="login.html" class="active">Admin Login</a>
+          <a href="dashboard.html">Dashboard</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container narrow">
+      <section class="card">
+        <h2>Admin Login</h2>
+        <form id="loginForm" class="form">
+          <label>Username
+            <input type="text" id="username" required />
+          </label>
+          <label>Password
+            <input type="password" id="password" required />
+          </label>
+          <button type="submit" class="btn">Sign in</button>
+        </form>
+        <p id="loginMessage" class="muted"></p>
+        <p class="muted small">Demo credentials: <strong>admin</strong> / <strong>Admin@123</strong></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>For demo only — do not use client-side auth in production.</small>
+      </div>
+    </footer>
+  </body>
+</html>
