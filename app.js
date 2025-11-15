@@ -41,8 +41,8 @@ function handleLogin(event) {
 function checkAuth() {
   const isAdmin = localStorage.getItem('isAdmin') === 'true';
   if (!isAdmin) {
-    // redirect to login
-    window.location.href = 'login.html';
+    // redirect to login (index)
+    window.location.href = 'index.html';
   }
 }
 
@@ -98,9 +98,9 @@ window.addEventListener('DOMContentLoaded', () => {
         // go to demo hub
         window.location.href = 'demo.html';
       } else {
-        // remember intent and go to login
+        // remember intent and go to login (index)
         sessionStorage.setItem('postLoginDemo', '1');
-        window.location.href = 'login.html';
+        window.location.href = 'index.html';
       }
     };
   }
