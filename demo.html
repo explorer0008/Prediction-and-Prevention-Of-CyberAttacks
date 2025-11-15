@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Demo Hub</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header bg-gradient-to-r from-blue-100/60 to-white/60 border-b border-gray-200 shadow-sm">
+      <div class="container flex flex-col md:flex-row items-center justify-between py-3">
+        <h1 class="brand text-2xl font-bold text-blue-700 mb-2 md:mb-0">Demo Hub</h1>
+        <nav class="main-nav flex gap-2">
+          <a href="index.html" class="border border-primary text-primary rounded px-3 py-1 bg-transparent">Home</a>
+          <a href="login.html" class="border border-primary text-primary rounded px-3 py-1 bg-transparent">Admin Login</a>
+          <a href="dashboard.html" class="border border-primary text-primary rounded px-3 py-1 bg-transparent">Dashboard</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container my-4 max-w-xl mx-auto">
+      <section class="card bg-white/60 rounded-lg shadow p-5 mb-4">
+        <h2 class="text-xl font-semibold text-blue-800 mb-2">Demo Options</h2>
+        <p class="mb-3 text-gray-700">Choose a demo to explore:</p>
+        <ul class="list-group grid gap-3">
+          <li class="list-group-item border-0 p-0">
+            <a href="https://colab.research.google.com/drive/1OHtSOSxmskJVA-kJEee-gM9_D8fgwrQ3?usp=sharing" class="btn btn-primary w-full rounded shadow px-4 py-2">Prediction</a>
+          </li>
+          <li class="list-group-item border-0 p-0">
+            <a href="https://colab.research.google.com/drive/1KcVlkWDbuPjeO4akBFp8lN3kqhSCfsEZ?usp=sharing" class="btn btn-primary w-full rounded shadow px-4 py-2">Encryption</a>
+          </li>
+        </ul>
+        <p class="muted small text-gray-500 mt-3">You must be signed in as admin to access full features.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer bg-blue-50 border-t border-gray-200 mt-4 py-3">
+      <div class="container text-center">
+        <small class="text-gray-500">Demo hub — links to placeholder demo pages.</small>
+      </div>
+    </footer>
+  </body>
+</html>
