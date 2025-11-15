@@ -11,11 +11,15 @@
   <link rel="stylesheet" href="styles.css" />
   <script src="app.js" defer></script>
   <script>
-    // Redirect to login if not authenticated
+    // This index page is the Admin Login (require authentication first)
     document.addEventListener('DOMContentLoaded', function() {
+      // If already authenticated, keep them on dashboard or front page
       var isAdmin = localStorage.getItem('isAdmin') === 'true';
-      if (!isAdmin) {
-        window.location.href = 'login.html';
+      if (isAdmin) {
+        // If admin, redirect to dashboard by default
+        // (user can still navigate to Home which is index)
+        // Commented out to keep admin on this page if desired
+        // window.location.href = 'dashboard.html';
       }
     });
   </script>
@@ -25,51 +29,33 @@
       <div class="container flex flex-col md:flex-row items-center justify-between py-3">
         <h1 class="brand text-2xl font-bold text-blue-700 mb-2 md:mb-0">Cybersecurity Dataset Explorer</h1>
         <nav class="main-nav flex gap-2">
-          <a href="index.html" class="border border-primary text-primary rounded px-3 py-1 bg-transparent">Home</a>
-          <a href="login.html" class="border border-primary text-primary rounded px-3 py-1 bg-transparent">Admin Login</a>
+          <a href="front.html" class="border border-primary text-primary rounded px-3 py-1 bg-transparent">Home</a>
+          <a href="index.html" class="border border-primary text-primary rounded px-3 py-1 bg-transparent active">Admin Login</a>
           <a href="dashboard.html" class="border border-primary text-primary rounded px-3 py-1 bg-transparent">Dashboard</a>
         </nav>
       </div>
     </header>
 
-    <main class="container my-4">
-  <section class="hero bg-white/60 rounded-lg shadow p-4 mb-4">
-        <h2 class="text-xl font-semibold text-blue-800 mb-2">Overview</h2>
-        <p class="mb-2 text-gray-700">
-          This workspace contains several CSV exports of network traffic and
-          attack scenarios. The Show Demo will redirect you to the demo hub
-          where you can explore prediction and encryption demos.
-        </p>
-  <p class="muted text-sm text-gray-500 mb-2">Demo admin credentials: <strong>Divyanshu</strong> / <strong>12345</strong></p>
-        <p>
-          <a href="#" id="showDemoLink" class="btn btn-primary rounded shadow px-4 py-2" onclick="showDemo(event)">Show Demo</a>
-        </p>
-      </section>
-
-  <section class="files mb-4 bg-white/50 rounded-lg shadow p-3">
-        <h3 class="text-lg font-semibold text-blue-700 mb-2">Available datasets (downloadable)</h3>
-        <ul class="list-group grid gap-2 md:grid-cols-2 lg:grid-cols-3">
-          <li class="list-group-item"><a href="cybersecurity_intrusion_data.csv" class="text-blue-600 hover:underline">cybersecurity_intrusion_data.csv</a></li>
-          <li class="list-group-item"><a href="Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv" class="text-blue-600 hover:underline">Friday DDos</a></li>
-          <li class="list-group-item"><a href="Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv" class="text-blue-600 hover:underline">Friday PortScan</a></li>
-          <li class="list-group-item"><a href="Monday-WorkingHours.pcap_ISCX.csv" class="text-blue-600 hover:underline">Monday Working Hours</a></li>
-          <li class="list-group-item"><a href="Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv" class="text-blue-600 hover:underline">Thursday Infiltration</a></li>
-        </ul>
-      </section>
-
-  <section class="about bg-gray-50/60 rounded-lg shadow p-4">
-        <h3 class="text-lg font-semibold text-blue-700 mb-2">Next steps</h3>
-        <ol class="list-decimal list-inside text-gray-700">
-          <li>Log in as admin to access the dashboard.</li>
-          <li>Integrate the ML model into the dashboard (we'll do this later).</li>
-          <li>Replace client-side credentials with a secure backend before production.</li>
-        </ol>
+    <main class="container my-4 max-w-lg mx-auto">
+      <section class="card bg-white/60 rounded-lg shadow p-4 mb-4">
+        <h2 class="text-xl font-semibold text-blue-800 mb-2">Admin Login</h2>
+        <form id="loginForm" class="form">
+          <label class="d-block mb-2">Username
+            <input type="text" id="username" required class="form-control" />
+          </label>
+          <label class="d-block mb-2">Password
+            <input type="password" id="password" required class="form-control" />
+          </label>
+          <button type="submit" class="btn btn-primary mt-2">Sign in</button>
+        </form>
+        <p id="loginMessage" class="muted mt-2"></p>
+        <p class="muted small text-gray-500 mt-2">Demo credentials: <strong>Divyanshu</strong> / <strong>12345</strong></p>
       </section>
     </main>
 
     <footer class="site-footer bg-blue-50 border-t border-gray-200 mt-4 py-3">
       <div class="container text-center">
-        <small class="text-gray-500">Files are local to this workspace.</small>
+        <small class="text-gray-500">For demo only — do not use client-side auth in production.</small>
       </div>
     </footer>
   </body>
