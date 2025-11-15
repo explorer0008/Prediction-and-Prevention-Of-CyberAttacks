@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body onload="checkAuth(); setTimeout(dashboardAutoDemo, 250);">
+    <header class="site-header">
+      <div class="container">
+        <h1 class="brand">Admin Dashboard</h1>
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="login.html">Admin Login</a>
+          <a href="dashboard.html" class="active">Dashboard</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <div class="dash-header">
+          <h2>Welcome, Admin</h2>
+          <div>
+            <button class="btn-outline" onclick="logout()">Logout</button>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card small">
+            <h4>Datasets</h4>
+            <p><a href="cybersecurity_intrusion_data.csv">Open main dataset</a></p>
+          </div>
+
+          <div class="card small">
+            <h4>Model</h4>
+            <p>ML model not yet integrated. Use this area to trigger analysis once backend is ready.</p>
+          </div>
+
+          <div class="card small">
+            <h4>Reports</h4>
+            <p>Summary statistics and visualizations will appear here.</p>
+          </div>
+        </div>
+
+        <section class="log">
+          <h3>Admin actions</h3>
+          <p><button class="btn" onclick="simulateAnalysis()">Simulate Analysis (demo)</button></p>
+          <div id="simResult" class="muted"></div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>Admin area — client-side demo only.</small>
+      </div>
+    </footer>
+  </body>
+</html>
