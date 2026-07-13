@@ -738,14 +738,9 @@ Attack Distribution
 
 </div>
 
-<div
-style="height:320px;display:flex;align-items:center;justify-content:center;">
+<div class="chart-container">
 
-<p class="text-muted">
-
-Pie Chart will appear here after prediction.
-
-</p>
+<canvas id="attackChart"></canvas>
 
 </div>
 
@@ -753,13 +748,9 @@ Pie Chart will appear here after prediction.
 
 <div class="chart-card">
 
-<div class="chart-header">
+<div class="chart-container">
 
-<h3 class="chart-title">
-
-Feature Importance
-
-</h3>
+<canvas id="featureChart"></canvas>
 
 </div>
 
@@ -1262,144 +1253,109 @@ Prediction Engine Online
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<script>
+<footer class="site-footer">
 
-const attackChart = document.getElementById("attackChart");
+<div class="container">
 
-if(attackChart){
+<div class="feature-grid">
 
-new Chart(attackChart,{
+<div>
 
-type:"doughnut",
+<h3 class="mb-2">
 
-data:{
+CyberShield AI
 
-labels:[
-"Benign",
-"DDoS",
-"Port Scan",
-"Brute Force",
-"Web Attack"
-],
+</h3>
 
-datasets:[{
+<p>
 
-data:[
-65,
-12,
-10,
-8,
-5
-],
+Enterprise Intrusion Detection and Threat Intelligence Platform powered by Machine Learning.
 
-backgroundColor:[
-"#10B981",
-"#EF4444",
-"#3B82F6",
-"#F59E0B",
-"#8B5CF6"
-],
+</p>
 
-borderWidth:0
+</div>
 
-}]
+<div>
 
-},
+<h4 class="mb-2">
 
-options:{
+Dashboard
 
-responsive:true,
+</h4>
 
-plugins:{
-legend:{
-labels:{
-color:"#F8FAFC"
-}
-}
+<ul>
 
-}
+<li class="mb-1">Threat Monitoring</li>
 
-}
+<li class="mb-1">Prediction Engine</li>
 
-});
+<li class="mb-1">Analytics</li>
 
-}
+<li class="mb-1">Reports</li>
 
-const featureChart=document.getElementById("featureChart");
+</ul>
 
-if(featureChart){
+</div>
 
-new Chart(featureChart,{
+<div>
 
-type:"bar",
+<h4 class="mb-2">
 
-data:{
+Technology Stack
 
-labels:[
-"Flow Duration",
-"Packet Length",
-"Flow Bytes",
-"Idle Time",
-"Flow IAT",
-"Packet Rate"
-],
+</h4>
 
-datasets:[{
+<ul>
 
-label:"Importance",
+<li class="mb-1">HTML5</li>
 
-data:[
-92,
-84,
-73,
-61,
-55,
-49
-]
+<li class="mb-1">CSS3</li>
 
-}]
+<li class="mb-1">JavaScript</li>
 
-},
+<li class="mb-1">Flask</li>
 
-options:{
+<li class="mb-1">Scikit-Learn</li>
 
-responsive:true,
+</ul>
 
-plugins:{
-legend:{
-display:false
-}
-},
+</div>
 
-scales:{
+</div>
 
-x:{
-ticks:{
-color:"#CBD5E1"
-},
-grid:{
-display:false
-}
-},
+<hr style="margin:35px 0;border:none;border-top:1px solid var(--border);">
 
-y:{
-ticks:{
-color:"#CBD5E1"
-},
-grid:{
-color:"#22324B"
-}
-}
+<div class="flex-between">
 
-}
+<p>
 
-}
+© 2026 CyberShield AI. All Rights Reserved.
 
-});
+</p>
 
-}
+<div class="status status-online">
 
-</script>
+<div class="status-dot"></div>
+
+<span>
+
+Prediction Engine Online
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+
+<script src="app.js" defer></script>
 
 </body>
 
