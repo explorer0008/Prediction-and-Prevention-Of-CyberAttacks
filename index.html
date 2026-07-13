@@ -1,64 +1,346 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cybersecurity Dataset - Front</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ENjdO4Dr2bkBIFxQpeoA6VKHr8zWv1pGp9e+Zl5/1GAR2zE+1I4HN8WvCWPIPm49" crossorigin="anonymous">
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
 
-  <link rel="stylesheet" href="./style.css">
+<head>
 
-  <script src="app.js" defer></script>
-  <script>
-    // This index page is the Admin Login (require authentication first)
-    document.addEventListener('DOMContentLoaded', function() {
-      // If already authenticated, keep them on dashboard or front page
-      var isAdmin = localStorage.getItem('isAdmin') === 'true';
-      if (isAdmin) {
-        // If admin, redirect to dashboard by default
-        // (user can still navigate to Home which is index)
-        // Commented out to keep admin on this page if desired
-        // window.location.href = 'dashboard.html';
-      }
-    });
-  </script>
-  </head>
-  <body>
-  <header class="site-header bg-gradient-to-r from-blue-100/60 to-white/60 border-b border-gray-200 shadow-sm">
-      <div class="container flex flex-col md:flex-row items-center justify-between py-3">
-        <h1 class="brand text-2xl font-bold text-blue-700 mb-2 md:mb-0">Cybersecurity Dataset Explorer</h1>
-        <nav class="main-nav flex gap-2">
-          <a href="front.html" class="border border-primary text-primary rounded px-3 py-1 bg-transparent">Home</a>
-          <a href="index.html" class="border border-primary text-primary rounded px-3 py-1 bg-transparent active">Admin Login</a>
-          <a href="dashboard.html" class="border border-primary text-primary rounded px-3 py-1 bg-transparent">Dashboard</a>
-        </nav>
-      </div>
-    </header>
+<meta charset="UTF-8">
 
-    <main class="container my-4 max-w-lg mx-auto">
-      <section class="card bg-white/60 rounded-lg shadow p-4 mb-4">
-        <h2 class="text-xl font-semibold text-blue-800 mb-2">Admin Login</h2>
-        <form id="loginForm" class="form">
-          <label class="d-block mb-2">Username
-            <input type="text" id="username" required class="form-control" />
-          </label>
-          <label class="d-block mb-2">Password
-            <input type="password" id="password" required class="form-control" />
-          </label>
-          <button type="submit" class="btn btn-primary mt-2">Sign in</button>
-        </form>
-        <p id="loginMessage" class="muted mt-2"></p>
-        <p class="muted small text-gray-500 mt-2">Demo credentials: <strong>Divyanshu</strong> / <strong>12345</strong></p>
-      </section>
-    </main>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    <footer class="site-footer bg-blue-50 border-t border-gray-200 mt-4 py-3">
-      <div class="container text-center">
-        <small class="text-gray-500">For demo only — do not use client-side auth in production.</small>
-      </div>
-    </footer>
-  </body>
+<title>CyberShield AI | Secure Login</title>
+
+<link rel="stylesheet"
+href="style.css">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<script src="app.js" defer></script>
+
+</head>
+
+<body>
+
+<header class="site-header">
+
+<div class="container">
+
+<a href="front.html"
+class="brand">
+
+Cyber<span>Shield</span> AI
+
+</a>
+
+<nav class="main-nav">
+
+<a href="front.html">
+
+Home
+
+</a>
+
+<a href="front.html#features">
+
+Features
+
+</a>
+
+<a href="front.html#architecture">
+
+Architecture
+
+</a>
+
+<a href="index.html"
+class="active">
+
+Sign In
+
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<section class="login-wrapper">
+
+<div class="login-card fade-in">
+
+<div class="text-center mb-4">
+
+<span class="badge badge-primary">
+
+Secure Access
+
+</span>
+
+<h2 class="mt-2">
+
+Welcome Back
+
+</h2>
+
+<p>
+
+Authenticate to access the CyberShield
+dashboard and threat analytics platform.
+
+</p>
+
+</div>
+
+<form id="loginForm">
+
+<div class="form-group">
+
+<label>
+
+Username
+
+</label>
+
+<input
+
+type="text"
+
+id="username"
+
+placeholder="Enter your username"
+
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Password
+
+</label>
+
+<input
+
+type="password"
+
+id="password"
+
+placeholder="Enter your password"
+
+required>
+
+</div>
+
+<div class="flex-between mb-3">
+
+<label
+style="display:flex;align-items:center;gap:8px;cursor:pointer;">
+
+<input
+type="checkbox">
+
+<span>
+
+Remember Me
+
+</span>
+
+</label>
+
+<a href="#">
+
+Forgot Password?
+
+</a>
+
+</div>
+
+<button
+type="submit"
+class="btn w-100">
+
+Sign In
+
+</button>
+
+<p
+id="loginMessage"
+class="text-center mt-3">
+
+</p>
+<div class="mt-4">
+
+<div class="alert-card success">
+
+<div class="alert-icon">
+
+🛡️
+
+</div>
+
+<div>
+
+<h4>
+
+Secure Authentication
+
+</h4>
+
+<p>
+
+Access to the dashboard is restricted to authenticated users. Credentials are verified before loading the analytics modules.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="alert-card warning">
+
+<div class="alert-icon">
+
+⚠️
+
+</div>
+
+<div>
+
+<h4>
+
+Security Notice
+
+</h4>
+
+<p>
+
+All uploaded datasets are processed locally by the prediction engine and are never modified during analysis.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</form>
+
+</div>
+
+<div class="login-card glass slide-up">
+
+<span class="badge badge-success">
+
+Platform Overview
+
+</span>
+
+<h3 class="mt-2 mb-3">
+
+CyberShield Dashboard
+
+</h3>
+
+<p class="mb-4">
+
+Sign in to access the complete cybersecurity platform including intelligent prediction, analytics, encryption and downloadable reports.
+
+</p>
+
+<div class="dashboard-cards">
+
+<div class="metric-card">
+
+<div class="metric-title">
+
+Prediction Engine
+
+</div>
+
+<div class="metric-value">
+
+AI
+
+</div>
+
+<div class="metric-change up">
+
+Real-Time Detection
+
+</div>
+
+</div>
+
+<div class="metric-card">
+
+<div class="metric-title">
+
+Threat Analytics
+
+</div>
+
+<div class="metric-value">
+
+24/7
+
+</div>
+
+<div class="metric-change up">
+
+Continuous Monitoring
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="site-footer">
+
+<div class="container">
+
+<div class="flex-between">
+
+<p>
+
+CyberShield AI © 2026
+
+</p>
+
+<div class="status status-online">
+
+<div class="status-dot"></div>
+
+<span>
+
+Secure Connection
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+</body>
+
 </html>
