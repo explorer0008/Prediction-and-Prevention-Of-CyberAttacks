@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>CyberShield AI | Secure Login</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</head>
+
+<body>
+
+<header class="site-header">
+
+<div class="container">
+
+<a href="front.html"
+class="brand">
+
+Cyber<span>Shield</span> AI
+
+</a>
+
+<nav class="main-nav">
+
+<a href="front.html">
+
+Home
+
+</a>
+
+<a href="front.html#features">
+
+Features
+
+</a>
+
+<a href="front.html#architecture">
+
+Architecture
+
+</a>
+
+<a href="index.html"
+class="active">
+
+Sign In
+
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<section class="login-wrapper">
+
+<div class="login-card fade-in">
+
+<div class="text-center mb-4">
+
+<span class="badge badge-primary">
+
+Secure Access
+
+</span>
+
+<h2 class="mt-2">
+
+Welcome Back
+
+</h2>
+
+<p>
+
+Authenticate to access the CyberShield
+dashboard and threat analytics platform.
+
+</p>
+
+</div>
+
+<form id="loginForm">
+
+<div class="form-group">
+
+<label>
+
+Username
+
+</label>
+
+<input
+
+type="text"
+
+id="username"
+
+placeholder="Enter your username"
+
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Password
+
+</label>
+
+<input
+
+type="password"
+
+id="password"
+
+placeholder="Enter your password"
+
+required>
+
+</div>
+
+<div class="flex-between mb-3">
+
+<label
+style="display:flex;align-items:center;gap:8px;cursor:pointer;">
+
+<input
+type="checkbox">
+
+<span>
+
+Remember Me
+
+</span>
+
+</label>
+
+<a href="#">
+
+Forgot Password?
+
+</a>
+
+</div>
+
+<button
+type="submit"
+class="btn w-100">
+
+Sign In
+
+</button>
+
+<p
+id="loginMessage"
+class="text-center mt-3">
+
+</p>
+<div class="mt-4">
+
+<div class="alert-card success">
+
+<div class="alert-icon">
+
+🛡️
+
+</div>
+
+<div>
+
+<h4>
+
+Secure Authentication
+
+</h4>
+
+<p>
+
+Access to the dashboard is restricted to authenticated users. Credentials are verified before loading the analytics modules.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="alert-card warning">
+
+<div class="alert-icon">
+
+⚠️
+
+</div>
+
+<div>
+
+<h4>
+
+Security Notice
+
+</h4>
+
+<p>
+
+All uploaded datasets are processed locally by the prediction engine and are never modified during analysis.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</form>
+
+</div>
+
+<div class="login-card glass slide-up">
+
+<span class="badge badge-success">
+
+Platform Overview
+
+</span>
+
+<h3 class="mt-2 mb-3">
+
+CyberShield Dashboard
+
+</h3>
+
+<p class="mb-4">
+
+Sign in to access the complete cybersecurity platform including intelligent prediction, analytics, encryption and downloadable reports.
+
+</p>
+
+<div class="dashboard-cards">
+
+<div class="metric-card">
+
+<div class="metric-title">
+
+Prediction Engine
+
+</div>
+
+<div class="metric-value">
+
+AI
+
+</div>
+
+<div class="metric-change up">
+
+Real-Time Detection
+
+</div>
+
+</div>
+
+<div class="metric-card">
+
+<div class="metric-title">
+
+Threat Analytics
+
+</div>
+
+<div class="metric-value">
+
+24/7
+
+</div>
+
+<div class="metric-change up">
+
+Continuous Monitoring
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="site-footer">
+
+<div class="container">
+
+<div class="flex-between">
+
+<p>
+
+CyberShield AI © 2026
+
+</p>
+
+<div class="status status-online">
+
+<div class="status-dot"></div>
+
+<span>
+
+Secure Connection
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+</body>
+
+</html>
